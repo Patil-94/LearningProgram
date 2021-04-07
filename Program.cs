@@ -8,14 +8,13 @@ namespace EmpWageComputation
 {
     class Program
     {
+        //constants
+        public const  int Full_TIME = 1;
+        public const int PART_TIME = 2;
+        public const int EMP_RATE_PER_HR = 20;
         static void Main(string[] args)
         {
-            //constants
-            int Full_TIME = 1;
-            int PART_TIME = 2;
-            int EMP_RATE_PER_HR = 20;
-
-            //local variables
+           //local variables
             int empHrs = 0;
             int empWage = 0;
 
@@ -26,18 +25,19 @@ namespace EmpWageComputation
             Console.WriteLine("random value " + employeeCheck);
             //selection statements
 
-            if (employeeCheck == Full_TIME)
+            switch (employeeCheck)
             {
-                empHrs = 8;
-            }
-            else
-             if (employeeCheck  == PART_TIME)
-            {
-                empHrs = 4;
-            }
-            else
-            {
-                empHrs = 0;
+                case Full_TIME:
+                    empHrs = 8;
+                    break;
+
+                case PART_TIME:
+                    empHrs = 4;
+                    break;
+
+                default:
+                    empHrs = 0;
+                    break;
             }
             //computation
             empWage = EMP_RATE_PER_HR * empHrs;
