@@ -10,15 +10,33 @@ namespace EmpWageComputation
     {
         static void Main(string[] args)
         {
-            int present = 1;
+            //constants
+            int PRESENT = 1;
+            int EMP_RATE_PER_HR = 20;
+
+            //local variables
+            int empHrs = 0;
+            int empwage = 0;
+
+            //inbuilt class
             Random random = new Random();
-            int employeecheck = random.Next(0, 2);
-            Console.WriteLine("random value" + employeecheck);
-            if (employeecheck == present)
-                Console.WriteLine("Employee is present");
+            int employeeCheck = random.Next(0, 2);
+
+            Console.WriteLine("random value " + employeeCheck);
+            //selection statements
+
+            if (employeeCheck == PRESENT)
+            {
+                empHrs = 8;
+            }
             else
-                Console.WriteLine("Employee is absent");
-            Console.Read();
+            {
+                empHrs = 0;
+            }
+            //computation
+            empwage = EMP_RATE_PER_HR * empHrs;
+            Console.WriteLine("emp wage per day " + empwage);
+            Console.Read(); ;
         }
     }
 }
