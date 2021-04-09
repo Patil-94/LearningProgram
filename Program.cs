@@ -26,7 +26,7 @@ namespace EmpWageComputation
             {
                 int employeeCheck = random.Next(0, 3);
 
-               Console.WriteLine("random value " + employeeCheck);
+               //Console.WriteLine("random value " + employeeCheck);
                 //selection statements
 
                 switch (employeeCheck)
