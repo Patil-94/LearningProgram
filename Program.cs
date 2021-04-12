@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace EmpWageComputation
 {
-    class Program
+    public class Program
     {
         //constants
         public const  int Full_TIME = 1;
         public const int PART_TIME = 2;
-        public const int EMP_RATE_PER_HR = 20;
-        public const int MAX_WORKING_DAYS = 20;
-        public const int MAX_WORKING_HRS = 100;
+        //public const int EMP_RATE_PER_HR = 20;
+        //public const int MAX_WORKING_DAYS = 20;
+        //public const int MAX_WORKING_HRS = 100;
 
-        public static void ComputeWage()
+        public static void ComputeWage(String companyName,int wagePerHour,int maxWorkingDays,int maxWorkingHours)
         {
             //local variables
             int empHrs = 0;
@@ -27,12 +27,13 @@ namespace EmpWageComputation
 
             //inbuilt class
             Random random = new Random();
-            while (hrs < MAX_WORKING_HRS && WorkingDays <= MAX_WORKING_DAYS)
+            while (hrs < maxWorkingHours && WorkingDays <= maxWorkingDays )
             {
                 WorkingDays++;
                 int employeeCheck = random.Next(0, 3);
 
                 //Console.WriteLine("random value " + employeeCheck);
+
                 //selection statements
 
                 switch (employeeCheck)
@@ -50,16 +51,17 @@ namespace EmpWageComputation
                         break;
                 }
                 //computation
-                empWage = EMP_RATE_PER_HR * empHrs;
+                empWage = wagePerHour  * empHrs;
                 hrs = empHrs;
                 totalEmpWage += empWage;//totalEmpWage=totalWage+empWage
             }
-            Console.WriteLine("Emp wage for " + WorkingDays + "days" + totalEmpWage);
-            Console.WriteLine("Working hrs " + hrs);
+            Console.WriteLine("Emp wage for " + companyName +"\t is\t" +totalEmpWage);
+            
         }
         static void Main(string[] args)
         {
-            ComputeWage();
+            ComputeWage("Demart" ,20,20,40);
+            ComputeWage("Reliance", 15, 15, 30);
             Console.Read();
 
         }
