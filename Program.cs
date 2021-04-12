@@ -14,9 +14,10 @@ namespace EmpWageComputation
         public const int EMP_RATE_PER_HR = 20;
         public const int MAX_WORKING_DAYS = 20;
         public const int MAX_WORKING_HRS = 100;
-        static void Main(string[] args)
+
+        public static void ComputeWage()
         {
-           //local variables
+            //local variables
             int empHrs = 0;
             int empWage = 0;
             int totalEmpWage = 0;
@@ -55,7 +56,12 @@ namespace EmpWageComputation
             }
             Console.WriteLine("Emp wage for " + WorkingDays + "days" + totalEmpWage);
             Console.WriteLine("Working hrs " + hrs);
+        }
+        static void Main(string[] args)
+        {
+            ComputeWage();
             Console.Read();
+
         }
     }
 }
