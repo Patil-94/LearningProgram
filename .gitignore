@@ -1,3 +1,6 @@
+NLog.config 
+NLog.xsd     
+packages.config
 ./   
 Properties/  
 obj/
