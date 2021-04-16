@@ -15,8 +15,9 @@ namespace EmpWageComputation
 		public int totalEmpWage;
 
 		public CompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth) //parameterized constructer
-		{
-			this.company = company;
+		{ 
+			//invoke current class constructor
+		    this.company = company;
 			this.empRatePerHour = empRatePerHour;
 			this.numOfWorkingDays = numOfWorkingDays;
 			this.maxHoursPerMonth = maxHoursPerMonth;
