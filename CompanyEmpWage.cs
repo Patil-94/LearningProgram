@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 namespace EmpWageComputation
 {
     class CompanyEmpWage
-    {
+    { //instance variable
 		public string company;
 		public int empRatePerHour;
 		public int numOfWorkingDays;
 		public int maxHoursPerMonth;
 		public int totalEmpWage;
 
-		public CompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
+		public CompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth) //parameterized constructer
 		{
 			this.company = company;
 			this.empRatePerHour = empRatePerHour;
@@ -22,14 +22,15 @@ namespace EmpWageComputation
 			this.maxHoursPerMonth = maxHoursPerMonth;
 		}
 
-		public void setTotalEmpWage(int totalEmpWage)
+		public void setTotalEmpWage(int totalEmpWage) //set method
 		{
 			this.totalEmpWage = totalEmpWage;
 		}
 
-		public string toString()
+		public string toString() //instance method 
 		{
 			return "total EmpWage for company :" + this.company + " is :" + this.totalEmpWage;
 		}
 	}
 }
+
