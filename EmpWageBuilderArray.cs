@@ -9,12 +9,12 @@ namespace EmpWageComputation
         public const int IS_PART_TIME = 1;
         public const int IS_FULL_TIME = 2;
 
-        private LinkedList<CompanyEmpWage> companyEmpWaeList;
+        private LinkedList<CompanyEmpWage> companyEmpWageList;
         private Dictionary<string, CompanyEmpWage> companyToEmpWageMap;
 
         public EmpWageBuilderArray() //constructor
         {
-            this.companyEmpWaeList = new LinkedList<CompanyEmpWage>();
+            this.companyEmpWageList = new LinkedList<CompanyEmpWage>();
             this.companyToEmpWageMap = new Dictionary<string, CompanyEmpWage>();
 
         }
@@ -22,13 +22,13 @@ namespace EmpWageComputation
         public void AddCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHourPerMonth) 
         {//body of interface member
             CompanyEmpWage companyEmpWage = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHourPerMonth);
-            this.companyEmpWaeList.AddLast(companyEmpWage);
+            this.companyEmpWageList.AddLast(companyEmpWage);
             this.companyToEmpWageMap.Add(company, companyEmpWage);
 
         }
         public void computeEmpWage() //body of interface member
         {
-            foreach (CompanyEmpWage companyEmpWage in this.companyEmpWaeList)
+            foreach (CompanyEmpWage companyEmpWage in this.companyEmpWageList)
             {
                 companyEmpWage.setTotalEmpWage(this.computeEmpWage(companyEmpWage));
                 Console.WriteLine(companyEmpWage.toString());
@@ -57,6 +57,8 @@ namespace EmpWageComputation
                 totalEmpHrs += empHrs;
                 Console.WriteLine("Days" + totalWorkingDays + "EmpHrs : " + empHrs);
             }
+            companyEmpWage.dailyWage = empHrs * companyEmpWage.empRatePerHour;
+            companyEmpWage.TotalWageAlongWithDailyWage = totalEmpHrs * companyEmpWage.empRatePerHour + companyEmpWage.dailyWage;
             return totalEmpHrs * companyEmpWage.empRatePerHour;
         }
         public int getTotalWage(string company) //using get method

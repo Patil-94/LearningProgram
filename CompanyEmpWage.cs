@@ -13,7 +13,8 @@ namespace EmpWageComputation
 		public int numOfWorkingDays;
 		public int maxHoursPerMonth;
 		public int totalEmpWage;
-
+		public int dailyWage;
+		public int TotalWageAlongWithDailyWage;
 		public CompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth) //parameterized constructer
 		{ 
 			//invoke current class constructor
@@ -30,7 +31,8 @@ namespace EmpWageComputation
 
 		public string toString() //instance method 
 		{
-			return "total EmpWage for company :" + this.company + " is :" + this.totalEmpWage;
+
+			return "\nTotal Emp Wage for Company : " + this.company + " is :" + this.totalEmpWage + "\nDaily Wage for Company : " + this.company + " is :" + this.dailyWage + "\nTotal  Emp wage along with daily Wage is " + this.TotalWageAlongWithDailyWage;
 		}
 	}
 }
